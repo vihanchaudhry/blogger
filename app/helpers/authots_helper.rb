@@ -1,0 +1,2 @@
+module AuthotsHelper
+end
