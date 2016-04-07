@@ -2,16 +2,26 @@
 <html>
 <head>
   <title>Blogger</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<p class='flash'>
-	<%= flash.notice %>
+<p class="flash">
+  <%= flash.notice %>
 </p>
-<%= yield %>
-
+<div id="container">
+  <div id="content">
+    <%= yield %>
+    <hr>
+    <h6>
+      <% if logged_in? %>
+          <%= "Logged in as #{current_user.email}" %>
+      <% else %>
+          Logged out
+      <% end %>
+    </h6>
+  </div>
+</div>
 </body>
 </html>

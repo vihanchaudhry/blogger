@@ -18,7 +18,7 @@ class AuthorsControllerTest < ActionController::TestCase
 
   test "should create author" do
     assert_difference('Author.count') do
-      post :create, author: { email: @author.email, password: @author.password, password_confirmation: @author.password_confirmation, username: @author.username }
+      post :create, author: {email: @author.email, password: @author.password, password_confirmation: @author.password_confirmation, username: @author.username}
     end
 
     assert_redirected_to author_path(assigns(:author))
@@ -35,7 +35,7 @@ class AuthorsControllerTest < ActionController::TestCase
   end
 
   test "should update author" do
-    patch :update, id: @author, author: { email: @author.email, password: @author.password, password_confirmation: @author.password_confirmation, username: @author.username }
+    patch :update, id: @author, author: {email: @author.email, password: @author.password, password_confirmation: @author.password_confirmation, username: @author.username}
     assert_redirected_to author_path(assigns(:author))
   end
 
